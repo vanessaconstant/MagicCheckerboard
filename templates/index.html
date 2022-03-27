@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Magic Checkerboard</title>
+</head>
+
+<body>
+
+    <h1 style="color: {{color_two}}; background-color: {{color_one}};">*** Checkerboard ***</h1>
+
+    {% for x in range(0,row) %}
+
+    <div class="row">
+        {% for i in range(0,col)%}
+
+        {% if ((x+i) % 2 == 0) %}
+        <div class="col colorHover" style="background-color: {{color_one}};">
+
+        </div>
+        {%else%}
+        <div class="col colorHover" style="background-color: {{color_two}};">
+
+        </div>
+        {% endif %}
+
+
+
+        {% endfor %}
+    </div>
+    {% endfor %}
+
+
+</body>
+
+</html>
